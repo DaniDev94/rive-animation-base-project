@@ -60,7 +60,7 @@ function riveObjects() {
                 if ($btnArrowBack.classList.value == "active") {
                     $btnArrowBack.addEventListener("click", function (event) {
                         event.preventDefault();
-                        window.location.assign(location.origin + "./");
+                        window.location.assign(location.origin + "/");
                     });
                 }
             } else if (event.data[0].includes(ArrowMorphStates.TOMENU)) {
