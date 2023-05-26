@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1024, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/icons/rive.ico">
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="https://unpkg.com/@rive-app/canvas@1.0.98/rive.js"></script>
+    <script type="module" src="./index.js"></script>
+    <title>Rive core</title>
+</head>
+
+<body>
+    <div id="loading-container">
+        <canvas id="loading"></canvas>
+    </div>
+    <div id="view" class="view opacity-0">
+        <canvas id="bg-night"></canvas>
+        <button class="button" onclick="window.location.assign(location.origin + '/pages/basic_concepts' + '/')">Basic concepts</button>
+        <button class="button" onclick="window.location.assign(location.origin + '/pages/state_machines' + '/')">State machines</button>
+    </div>
+</body>
+
+</html>

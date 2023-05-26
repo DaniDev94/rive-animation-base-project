@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1024, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/icons/basic.ico">
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="https://unpkg.com/@rive-app/canvas@1.0.98/rive.js"></script>
+    <script type="module" src="./index.js"></script>
+    <title>Bouncing ball</title>
+</head>
+
+<body>
+    <div id="loading-container">
+        <canvas id="loading"></canvas>
+    </div>
+    <div id="view" class="view opacity-0">
+        <div class="view-container">
+            <div class="header-container">
+                <div class="arrow-back-content">
+                    <canvas id="arrow-back"></canvas>
+                </div>
+            </div>
+            <div class="main-container">
+                <div class="balls-content">
+                    <div class="balls">
+                        <div class="ball-green">
+                            <canvas id="ball-0-green" width="600" height="400"></canvas>
+                        </div>
+                        <div class="ball-purple">
+                            <canvas id="ball-1-purple" width="800" height="500"></canvas>
+                        </div>
+                        <div class="ball-blue">
+                            <canvas id="ball-2-blue" width="600" height="400"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="aside-content">
+                    <div class="aside-header">
+                        <div class="title">
+                            <h2 class="title-text">Bouncing balls</h2>
+                        </div>
+                        <div class="stars-icon">
+                            <canvas id="stars" width="550" height="200"></canvas>
+                        </div>
+                    </div>
+                    <div class="popup" id="popup">
+                        <span class="popup-text">Thanks for your assessment</span>
+                    </div>
+                    <div class="aside-buttons">
+                        <div class="button-content">
+                            <div class="button" id="btn-green">
+                                <span class="button-texts">Green</span>
+                            </div>
+                            <div class="nut-icon">
+                                <canvas id="nut-green" width="170" height="170"></canvas>
+                            </div>
+                        </div>
+                        <div class="button-content">
+                            <div class="button" id="btn-purple">
+                                <span class="button-texts">Purple</span>
+                            </div>
+                            <div class="nut-icon">
+                                <canvas id="nut-purple" width="170" height="170"></canvas>
+                            </div>
+                        </div>
+                        <div class="button-content">
+                            <div class="button" id="btn-blue">
+                                <span class="button-texts">Blue</span>
+                            </div>
+                            <div class="nut-icon">
+                                <canvas id="nut-blue" width="170" height="170"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

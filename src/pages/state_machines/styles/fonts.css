@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'starjedi';
+    font-style: normal;
+    font-weight: normal;
+    src: url('/fonts/starjedi.ttf');
+}
+
+@font-face {
+    font-family: 'game';
+    font-style: normal;
+    font-weight: normal;
+    src: url('/fonts/ancient-game.ttf');
+}
