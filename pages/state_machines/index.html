@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1024, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/icons/machines.ico">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://unpkg.com/@rive-app/canvas@1.0.98/rive.js"></script>
+    
+    <title>Bouncing ball</title>
+  <script type="module" crossorigin src="/assets/states-e3ac18d4.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/states.constants-07036398.js">
+  <link rel="stylesheet" href="/assets/index-3cad2c72.css">
+</head>
+
+<body>
+    <div id="loading-container">
+        <canvas id="loading"></canvas>
+    </div>
+    <div id="view" class="view opacity-0">
+        <div class="view-container">
+            <div class="header-container">
+                <div class="arrow-back-content">
+                    <canvas id="arrow-back"></canvas>
+                </div>
+            </div>
+            <div class="machines-container">
+                <div class="emoji-container">
+                    <h1 class="title">State machine lab</h1>
+                    <div class="emoji-content">
+                        <canvas id="emoji"></canvas>
+                        <p class="emoji-text">Change the color... which one do you think it prefers?</p>
+                    </div>
+                    <div class="emoji-btns-content">
+                        <div class="emoji-button" id="btn-yellow">
+                            <p class="emoji-btn-txt">Yellow</p>
+                        </div>
+                        <div class="emoji-button" id="btn-violet">
+                            <p class="emoji-btn-txt">violet</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ball-container">
+                    <div class="ball-content">
+                        <canvas id="ball"></canvas>
+                        <div class="btn-for-disable"></div>
+                        <div class="btn-for-disable btn-for-disable--2"></div>
+                    </div>
+                    <div class="ball-btns-content">
+                        <div class="ball-buttons-pop-up disabled" id="pop-up">
+                            <p class="pop-up-txt">Ups!!... It seems that the click inside animation has disabled the
+                                external buttons.</p>
+                        </div>
+                        <div class="ball-btns-container" id="ball-btns">
+                            <div class="ball-buttons" id="ball-button-left">
+                                <canvas id="btn-left"></canvas>
+                            </div>
+                            <div class="ball-buttons" id="ball-button-right">
+                                <canvas id="btn-right"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
