@@ -20,7 +20,7 @@ function riveObjects() {
     const $popup = document.getElementById("popup");
 
     const loading = new rive.Rive({
-        src: "/animations/loading.riv",
+        src: "animations/loading.riv",
         canvas: document.getElementById("loading"),
         autoplay: true,
         layout: new rive.Layout({ fit: "cover" }),
