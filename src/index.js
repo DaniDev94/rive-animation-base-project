@@ -1,5 +1,6 @@
 import { BgNightStates } from "./states.constants";
 
+
 function riveObjects() {
     const $loadingContainer = document.getElementById("loading-container");
     const $allContent = document.getElementById("view");
