@@ -8,6 +8,7 @@ import {
     BallButtonStates
 } from "../../states.constants.js";
 
+
 function riveObjects() {
     const $loadingContainer = document.getElementById("loading-container");
     const $allContent = document.getElementById("view");
