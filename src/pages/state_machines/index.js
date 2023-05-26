@@ -18,7 +18,7 @@ function riveObjects() {
     const $btnRight = document.getElementById("ball-button-right");
 
     const loading = new rive.Rive({
-        src: "./animations/loading.riv",
+        src: "/animations/loading.riv",
         canvas: document.getElementById("loading"),
         autoplay: true,
         layout: new rive.Layout({ fit: "cover" }),
@@ -69,7 +69,7 @@ function riveObjects() {
     });
 
     const emoji = new rive.Rive({
-        src: "./animations/emoji.riv",
+        src: "/animations/emoji.riv",
         canvas: document.getElementById("emoji"),
         autoplay: true,
         stateMachines: EmojiMachine.BASIC,
@@ -111,7 +111,7 @@ function riveObjects() {
     });
 
     const ball = new rive.Rive({
-        src: "./animations/ball-state-machine.riv",
+        src: "/animations/ball-state-machine.riv",
         canvas: document.getElementById("ball"),
         autoplay: true,
         layout: new rive.Layout({ fit: rive.Fit.Fill }),
@@ -124,7 +124,7 @@ function riveObjects() {
 
     const initializeBallButtons = () => {
         const ballButtonLeft = new rive.Rive({
-            src: "./animations/btn-ball.riv",
+            src: "/animations/btn-ball.riv",
             canvas: document.getElementById("btn-left"),
             autoplay: false,
             layout: new rive.Layout({ fit: rive.Fit.Fill }),
@@ -182,7 +182,7 @@ function riveObjects() {
         });
 
         const ballButtonRight = new rive.Rive({
-            src: "./animations/btn-ball.riv",
+            src: "/animations/btn-ball.riv",
             canvas: document.getElementById("btn-right"),
             autoplay: false,
             layout: new rive.Layout({ fit: rive.Fit.Fill }),
