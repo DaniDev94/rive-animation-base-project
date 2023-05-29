@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import dns from 'dns';
-import mpaPlugin from 'vite-plugin-mpa-plus'
 
 dns.setDefaultResultOrder('verbatim')
 const root = resolve(__dirname, 'src');
