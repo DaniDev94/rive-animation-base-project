@@ -36,8 +36,13 @@ function riveObjects() {
     });
 }
 
+function whereToNavigate () {
+    console.log(window.location)
+}
+
 function init() {
     riveObjects();
+    whereToNavigate();
 }
 
 document.addEventListener("DOMContentLoaded", function (event) {

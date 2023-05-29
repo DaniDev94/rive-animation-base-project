@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import dns from 'dns';
+import mpaPlugin from 'vite-plugin-mpa-plus'
 
 dns.setDefaultResultOrder('verbatim')
 const root = resolve(__dirname, 'src');
@@ -24,4 +25,20 @@ export default defineConfig({
             },
         },
     },
+    plugins: [
+        mpaPlugin({
+            pages: {
+                app1: {
+                    entry: '/src/pages/basic_concepts/index.html',
+                    filename: '/basic',
+                    template: '/src/pages/basic_concepts/index.html',
+                    inject: {
+                        data: {
+                            title: '/basic'
+                        }
+                    }
+                },
+            }
+        })
+    ],
 })
