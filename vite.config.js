@@ -8,7 +8,7 @@ const outDir = resolve(__dirname, 'dist');
 
 export default defineConfig({
     root,
-    base: './',
+    base: '/rive-animation-base-project/',
     publicDir: resolve(__dirname, 'public'),
     server: {
         port: '4000',
