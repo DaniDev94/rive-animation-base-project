@@ -24,20 +24,4 @@ export default defineConfig({
             },
         },
     },
-    plugins: [
-        mpaPlugin({
-            pages: {
-                app1: {
-                    entry: '/src/pages/basic_concepts/index.html',
-                    filename: '/basic',
-                    template: '/src/pages/basic_concepts/index.html',
-                    inject: {
-                        data: {
-                            title: '/basic'
-                        }
-                    }
-                },
-            }
-        })
-    ],
 })
