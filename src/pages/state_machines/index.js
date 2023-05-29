@@ -19,7 +19,7 @@ function riveObjects() {
     const $btnRight = document.getElementById("ball-button-right");
 
     const loading = new rive.Rive({
-        src: "/animations/loading.riv",
+        src: "/rive-animation-base-project/animations/loading.riv",
         canvas: document.getElementById("loading"),
         autoplay: true,
         layout: new rive.Layout({ fit: "cover" }),
