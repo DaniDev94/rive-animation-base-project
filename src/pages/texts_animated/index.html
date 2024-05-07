@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1024, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/icons/text.ico">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://unpkg.com/@rive-app/canvas@2.10.3"></script>
+    <script type="module" src="./index.js"></script>
+    <title>Animated texts</title>
+</head>
+
+<body>
+    <div id="loading-container">
+        <canvas id="loading"></canvas>
+    </div>
+    <div id="view" class="view opacity-0">
+        <div class="view-container">
+            <div class="header-container">
+                <div class="arrow-back-content">
+                    <canvas id="arrow-back"></canvas>
+                </div>
+            </div>
+
+            <div class="texts-container">
+
+                <div class="text-embedded-container">
+                    <div class="face-content face-0">
+                        <div class="face-text">Embedded</div>
+                        <canvas id="face-controller-0"></canvas>
+                    </div>
+                    <div class="text-content">
+                        <canvas id="text-animated-embedded"></canvas>
+                    </div>
+                </div>
+
+                <div class="text-hosted-container">
+                    <div class="face-content face-1">
+                        <div class="face-text">Hosted</div>
+                        <canvas id="face-controller-1"></canvas>
+                    </div>
+                    <div class="text-content">
+                        <canvas id="text-animated-hosted"></canvas>
+                    </div>
+                </div>
+
+                <div class="text-referenced-container">
+                    <div class="face-content face-2">
+                        <div class="face-text">Referenced</div>
+                        <canvas id="face-controller-2"></canvas>
+                    </div>
+                    <div class="text-content">
+                        <canvas id="text-animated-referenced"></canvas>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+</body>
+
+</html>

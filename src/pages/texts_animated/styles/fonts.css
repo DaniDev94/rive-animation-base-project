@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'town';
+    font-style: normal;
+    font-weight: normal;
+    src: url('/fonts/bromph_town.otf');
+}
+
+@font-face {
+    font-family: 'woods';
+    font-style: normal;
+    font-weight: normal;
+    src: url('/fonts/woodtrap.ttf');
+}

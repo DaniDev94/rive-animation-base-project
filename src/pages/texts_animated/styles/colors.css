@@ -1,0 +1,10 @@
+:root {
+    --black: #000000;
+    --black-blur: rgba(0, 0, 0, 0.431);
+    --grey-blur: rgba(76, 81, 94, 0.865);
+    --grey-soft: #F6F9F9;
+    --yellow: #FFDE63;
+    --violet: #7563FF;
+    --violet-medium: #5a189a;
+    --violet-dark: #240046;
+}

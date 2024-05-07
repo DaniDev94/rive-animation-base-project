@@ -63,6 +63,20 @@ const BallButtonStates = {
 }
 
 
+// Text animated page ---------------->
+const TextMachine = {
+    DEFAULT: 'StateMachine1'
+}
+
+const FaceMachine = {
+    DEFAULT: 'State Machine 1'
+}
+
+const SkullyMachine = {
+    DEFAULT: 'State Machine [Skully]'
+}
+
+
 // Common animations ---------------->
 const ArrowMachine = {
     MORPH: 'Morph'
@@ -89,5 +103,8 @@ export {
     EmojiBasicosStates,
     BallMachine,
     BallButtonMachine,
-    BallButtonStates
+    BallButtonStates,
+    TextMachine,
+    FaceMachine,
+    SkullyMachine
 }
