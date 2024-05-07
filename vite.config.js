@@ -21,6 +21,7 @@ export default defineConfig({
                 main: resolve(root, 'index.html'),
                 basic: resolve(root, 'pages/basic_concepts', 'index.html'),
                 states: resolve(root, 'pages/state_machines', 'index.html'),
+                texts: resolve(root, 'pages/texts_animated', 'index.html'),
             },
         },
     },
