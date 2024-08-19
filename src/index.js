@@ -1,4 +1,4 @@
-import { BgNightStates } from "./states.constants";
+import { BgNightStates } from "./scripts/states.constants.js";
 
 
 function riveObjects() {

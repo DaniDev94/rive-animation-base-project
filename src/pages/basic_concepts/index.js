@@ -7,7 +7,7 @@ import {
     StarsMachine,
     StarsStates,
     NutStates,
-} from "../../states.constants.js";
+} from "../../scripts/states.constants.js";
 
 
 function riveObjects() {

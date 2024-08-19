@@ -6,7 +6,7 @@ import {
     BallMachine,
     BallButtonMachine,
     BallButtonStates
-} from "../../states.constants.js";
+} from "../../scripts/states.constants.js";
 
 
 function riveObjects() {
