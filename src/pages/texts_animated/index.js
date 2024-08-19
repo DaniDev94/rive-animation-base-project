@@ -4,8 +4,8 @@ import {
   TextMachine,
   FaceMachine,
   SkullyMachine,
-} from "../../states.constants.js";
-
+} from "../../scripts/states.constants.js";
+import fonts from "../../scripts/fonts.js";
 
 function riveObjects() {
   const $loadingContainer = document.getElementById("loading-container");
@@ -116,6 +116,8 @@ function riveObjects() {
     },
   });
 
+
+  /*  <---------------- "Embedded" method on Rive ----------------> */
   const textAnimatedEmbedded = new rive.Rive({
     src: "/rive-animation-base-project/animations/text-animated-embedded.riv",
     artboard: "Prueba texto",
@@ -134,6 +136,8 @@ function riveObjects() {
     },
   });
 
+
+   /*  <---------------- "Hosted" method on Rive ----------------> */
   const textAnimatedHosted = new rive.Rive({
     src: "/rive-animation-base-project/animations/text-animated-hosted.riv",
     artboard: "Prueba texto",
@@ -152,6 +156,22 @@ function riveObjects() {
     },
   });
 
+
+  /*  <---------------- Load fonts from "Referenced" method on Rive ----------------> */
+  const loadFontAsset = async (asset) => {
+    // Usa la fuente importada directamente
+    const response = await fetch(fonts.deadpack);
+    const arrayBuffer = await response.arrayBuffer();
+  
+    // decodeFont crea un objeto de fuente específico de Rive que `setFont()` utiliza
+    const font = await rive.decodeFont(new Uint8Array(arrayBuffer));
+    asset.setFont(font);
+
+    // Asegúrate de llamar a unref para liberar cualquier referencia.
+    // Esto permite que el motor lo limpie cuando no se utilice en más animaciones.
+    font.unref();
+  };
+
   const textAnimatedReferenced = new rive.Rive({
     src: "/rive-animation-base-project/animations/text-animated-referenced.riv",
     artboard: "Prueba texto",
@@ -159,9 +179,18 @@ function riveObjects() {
     autoplay: false,
     stateMachines: TextMachine.DEFAULT,
     layout: new rive.Layout({ fit: rive.Fit.Fill }),
-    // assetLoader: (asset, bytes) => {
-    //   console.log(asset)
-    // },
+    assetLoader: (asset, bytes) => {
+      if (asset.cdnUuid.length > 0 || bytes.length > 0) {
+        return false;
+      }
+  
+      if (asset.isFont) {
+        loadFontAsset(asset);
+        return true;
+      } else {
+        return false;
+      }
+    },
     onLoad: () => {
       textAnimatedReferenced.resizeDrawingSurfaceToCanvas();
       const textNameSpace = "MyText";
@@ -169,7 +198,7 @@ function riveObjects() {
       const myDefaultText =
         textAnimatedReferenced.getTextRunValue(textNameSpace);
       // Setter for the text value ---------------->
-      const newTextValue = "Font code modifier";
+      const newTextValue = "Modified font";
       return textAnimatedReferenced.setTextRunValue(
         textNameSpace,
         newTextValue
