@@ -5,7 +5,7 @@ import {
   FaceMachine,
   SkullyMachine,
 } from "../../scripts/states.constants.js";
-import fonts from "../../scripts/fonts.js";
+import { loadFontAsset, handleLanguageChange } from "../../scripts/fonts.js";
 
 function riveObjects() {
   const $loadingContainer = document.getElementById("loading-container");
@@ -137,7 +137,7 @@ function riveObjects() {
   });
 
 
-   /*  <---------------- "Hosted" method on Rive ----------------> */
+  /*  <---------------- "Hosted" method on Rive ----------------> */
   const textAnimatedHosted = new rive.Rive({
     src: "/rive-animation-base-project/animations/text-animated-hosted.riv",
     artboard: "Prueba texto",
@@ -158,20 +158,6 @@ function riveObjects() {
 
 
   /*  <---------------- Load fonts from "Referenced" method on Rive ----------------> */
-  const loadFontAsset = async (asset) => {
-    // Usa la fuente importada directamente
-    const response = await fetch(fonts.deadpack);
-    const arrayBuffer = await response.arrayBuffer();
-  
-    // decodeFont crea un objeto de fuente específico de Rive que `setFont()` utiliza
-    const font = await rive.decodeFont(new Uint8Array(arrayBuffer));
-    asset.setFont(font);
-
-    // Asegúrate de llamar a unref para liberar cualquier referencia.
-    // Esto permite que el motor lo limpie cuando no se utilice en más animaciones.
-    font.unref();
-  };
-
   const textAnimatedReferenced = new rive.Rive({
     src: "/rive-animation-base-project/animations/text-animated-referenced.riv",
     artboard: "Prueba texto",
@@ -183,9 +169,9 @@ function riveObjects() {
       if (asset.cdnUuid.length > 0 || bytes.length > 0) {
         return false;
       }
-  
+
       if (asset.isFont) {
-        loadFontAsset(asset);
+        loadFontAsset(asset, "roboto");
         return true;
       } else {
         return false;
@@ -193,16 +179,7 @@ function riveObjects() {
     },
     onLoad: () => {
       textAnimatedReferenced.resizeDrawingSurfaceToCanvas();
-      const textNameSpace = "MyText";
-      // Getter for de text value ---------------->
-      const myDefaultText =
-        textAnimatedReferenced.getTextRunValue(textNameSpace);
-      // Setter for the text value ---------------->
-      const newTextValue = "Modified font";
-      return textAnimatedReferenced.setTextRunValue(
-        textNameSpace,
-        newTextValue
-      );
+      handleLanguageChange(textAnimatedReferenced, 'referenced');
     },
   });
 }

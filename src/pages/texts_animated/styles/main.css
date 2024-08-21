@@ -149,6 +149,44 @@
   height: 78%;
 }
 
+/* Select ---------------------- */
+
+.select-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 4rem;
+  z-index: 2;
+}
+
+.select-content select {
+  width: 170px;
+  padding: 10px;
+  margin-left: 12px;
+  cursor: pointer;
+  background-color: var(--violet-medium);
+  border: 3px solid var(--violet-dark);
+  border-radius: 15px;
+  color: var(--grey-soft);
+  font-family: "woods";
+  font-size: 25px;
+  letter-spacing: 3px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.select-content::after {
+  content: '\25BC';
+  position: absolute;
+  top: 20px;
+  right: 145px;
+  pointer-events: none;
+  font-size: 15px;
+  color: var(--violet-dark);
+}
+
 /* ---------------------- Higher specification ---------------------- */
 .active:active {
   transform: scale(0.9);
