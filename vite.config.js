@@ -22,6 +22,7 @@ export default defineConfig({
                 basic: resolve(root, 'pages/basic_concepts', 'index.html'),
                 states: resolve(root, 'pages/state_machines', 'index.html'),
                 texts: resolve(root, 'pages/texts_animated', 'index.html'),
+                binding: resolve(root, 'pages/data_binding', 'index.html'),
             },
         },
     },

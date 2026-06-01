@@ -1,0 +1,7 @@
+:root {
+    --black: #000000;
+    --black-blur: rgba(0, 0, 0, 0.431);
+    --white-blur: rgb(217 217 217 / 40%);
+    --white-blur-dark: rgb(217 217 217 / 75%);
+    --porcelain: #F6F9F9;
+}
