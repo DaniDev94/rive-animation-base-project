@@ -12,9 +12,7 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  background: url("/images/bg-woods.jpg") no-repeat;
-  background-position: top;
-  background-attachment: fixed;
+  background: url("../../../assets/images/bg-woods.jpg") no-repeat fixed top;
   background-size: cover;
 }
 
@@ -123,7 +121,7 @@
   border: 3px solid var(--violet-dark);
   border-radius: 15px;
   color: var(--grey-soft);
-  font-family: "woods";
+  font-family: "woods", serif;
   font-size: 25px;
   letter-spacing: 2px;
   text-align: center;
@@ -169,7 +167,7 @@
   border: 3px solid var(--violet-dark);
   border-radius: 15px;
   color: var(--grey-soft);
-  font-family: "woods";
+  font-family: "woods", serif;
   font-size: 25px;
   letter-spacing: 3px;
   appearance: none;

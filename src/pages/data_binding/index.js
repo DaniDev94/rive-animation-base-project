@@ -11,7 +11,7 @@ function globalRiveObjects() {
     const $btnArrowBack = document.getElementById("arrow-back");
 
     const loading = new rive.Rive({
-        src: "/rive-animation-base-project/animations/loading.riv",
+        src: "../../assets/animations/loading.riv",
         canvas: document.getElementById("loading"),
         autoplay: true,
         layout: new rive.Layout({fit: "cover"}),
@@ -27,7 +27,7 @@ function globalRiveObjects() {
     });
 
     const arrowBack = new rive.Rive({
-        src: "/rive-animation-base-project/animations/arrow-back.riv",
+        src: "../../assets/animations/arrow-back.riv",
         canvas: $btnArrowBack,
         autoplay: true,
         stateMachines: ArrowMachine.MORPH,
@@ -67,10 +67,10 @@ function mainRiveObject() {
     const $streakSaver = document.getElementById("streak-saver-front-db");
     const $buttonFloat = document.getElementsByClassName("button-animation-float")[0];
     const $buttonReload = document.getElementsByClassName("button-page-reload")[0];
-    const flyingFloat = new Audio('/sounds/flying_float.mp3');
+    const flyingFloat = new Audio('../../assets/sounds/flying_float.mp3');
 
     const streakSaver = new rive.Rive({
-        src: "/rive-animation-base-project/animations/gamificacion_salvarachas_front_db.riv",
+        src: "../../assets/animations/gamificacion_salvarachas_front_db.riv",
         canvas: $streakSaver,
         autoplay: true,
         autoBind: true,
@@ -133,8 +133,8 @@ function mainRiveObject() {
 function startRiveCountAnimation() {
     const $buttonStart = document.getElementsByClassName("button-animation-start")[0];
     const $buttonFloat = document.getElementsByClassName("button-animation-float")[0];
-    const countdownSound = new Audio('/sounds/countdown.mp3');
-    const whooshSound = new Audio('/sounds/whoosh.mp3');
+    const countdownSound = new Audio('../../assets/sounds/countdown.mp3');
+    const whooshSound = new Audio('../../assets/sounds/whoosh.mp3');
     let count = 5;
 
     $buttonStart.classList.add("btn-clicked");

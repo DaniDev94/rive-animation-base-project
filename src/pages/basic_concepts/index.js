@@ -20,7 +20,7 @@ function riveObjects() {
     const $popup = document.getElementById("popup");
 
     const loading = new rive.Rive({
-        src: "/rive-animation-base-project/animations/loading.riv",
+        src: "../../assets/animations/loading.riv",
         canvas: document.getElementById("loading"),
         autoplay: true,
         layout: new rive.Layout({ fit: "cover" }),
@@ -36,7 +36,7 @@ function riveObjects() {
     });
 
     const arrowBack = new rive.Rive({
-        src: "/rive-animation-base-project/animations/arrow-back.riv",
+        src: "../../assets/animations/arrow-back.riv",
         canvas: $btnArrowBack,
         autoplay: true,
         stateMachines: ArrowMachine.MORPH,
@@ -71,7 +71,7 @@ function riveObjects() {
     });
 
     const ball0Rive = new rive.Rive({
-        src: "/rive-animation-base-project/animations/ball_0.riv",
+        src: "../../assets/animations/ball_0.riv",
         canvas: document.getElementById("ball-0-green"),
         autoplay: true,
         animations: Ball0States.SQUASH,
@@ -100,7 +100,7 @@ function riveObjects() {
     });
 
     const ball1Rive = new rive.Rive({
-        src: "/rive-animation-base-project/animations/ball_1.riv",
+        src: "../../assets/animations/ball_1.riv",
         canvas: document.getElementById("ball-1-purple"),
         autoplay: true,
         layout: new rive.Layout({ fit: "cover", alignment: "center" }),
@@ -123,7 +123,7 @@ function riveObjects() {
     });
 
     const ball2Rive = new rive.Rive({
-        src: "/rive-animation-base-project/animations/ball_2.riv",
+        src: "../../assets/animations/ball_2.riv",
         canvas: document.getElementById("ball-2-blue"),
         autoplay: true,
         layout: new rive.Layout({ fit: "cover", alignment: "center" }),
@@ -143,7 +143,7 @@ function riveObjects() {
     });
 
     const stars = new rive.Rive({
-        src: "/rive-animation-base-project/animations/stars.riv",
+        src: "../../assets/animations/stars.riv",
         canvas: document.getElementById("stars"),
         autoplay: true,
         layout: new rive.Layout({ fit: "cover" }),
@@ -162,7 +162,7 @@ function riveObjects() {
     });
 
     const nutGreen = new rive.Rive({
-        src: "/rive-animation-base-project/animations/nut.riv",
+        src: "../../assets/animations/nut.riv",
         canvas: document.getElementById("nut-green"),
         autoplay: true,
         layout: new rive.Layout({ fit: "cover", alignment: "center" }),
@@ -178,7 +178,7 @@ function riveObjects() {
     });
 
     const nutPurple = new rive.Rive({
-        src: "/rive-animation-base-project/animations/nut.riv",
+        src: "../../assets/animations/nut.riv",
         canvas: document.getElementById("nut-purple"),
         autoplay: true,
         layout: new rive.Layout({ fit: "cover", alignment: "center" }),
@@ -194,7 +194,7 @@ function riveObjects() {
     });
 
     const nutBlue = new rive.Rive({
-        src: "/rive-animation-base-project/animations/nut.riv",
+        src: "../../assets/animations/nut.riv",
         canvas: document.getElementById("nut-blue"),
         autoplay: true,
         layout: new rive.Layout({ fit: "cover", alignment: "center" }),

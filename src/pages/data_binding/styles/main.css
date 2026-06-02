@@ -13,9 +13,7 @@
     height: 100vh;
     display: flex;
     align-items: center;
-    background: url('/images/bg-beach.jpg') no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+    background: url('../../../assets/images/bg-beach.jpg') no-repeat fixed center;
     background-size: cover;
 }
 

@@ -2,12 +2,12 @@
     font-family: 'old-west';
     font-style: normal;
     font-weight: normal;
-    src: url('/fonts/old-west.otf');
+    src: url('../../../assets/fonts/old-west.otf');
 }
 
 @font-face {
     font-family: 'wild-west';
     font-style: normal;
     font-weight: normal;
-    src: url('/fonts/wild-west.otf') ;
+    src: url('../../../assets/fonts/wild-west.otf') ;
 }

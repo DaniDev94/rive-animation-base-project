@@ -2,5 +2,5 @@
     font-family: 'roboto';
     font-style: normal;
     font-weight: bold;
-    src: url('/fonts/Roboto-Bold.ttf');
+    src: url('../assets/fonts/Roboto-Bold.ttf') format('truetype');
 }

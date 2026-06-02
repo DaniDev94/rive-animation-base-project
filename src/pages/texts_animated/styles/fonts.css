@@ -2,12 +2,12 @@
     font-family: 'town';
     font-style: normal;
     font-weight: normal;
-    src: url('/fonts/bromph_town.otf');
+    src: url('../../../assets/fonts/bromph_town.otf') format('truetype');
 }
 
 @font-face {
     font-family: 'woods';
     font-style: normal;
     font-weight: normal;
-    src: url('/fonts/woodtrap.ttf');
+    src: url('../../../assets/fonts/woodtrap.ttf') format('truetype');
 }

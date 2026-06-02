@@ -10,7 +10,7 @@ function riveObjects() {
     const $allContent = document.getElementById("view");
 
     loading = new rive.Rive({
-        src: "./animations/loading.riv",
+        src: "./assets/animations/loading.riv",
         canvas: document.getElementById("loading"),
         autoplay: true,
         layout: new rive.Layout({fit: "cover"}),
@@ -26,7 +26,7 @@ function riveObjects() {
     });
 
     bgNight = new rive.Rive({
-        src: "./animations/bg-night.riv",
+        src: "./assets/animations/bg-night.riv",
         canvas: document.getElementById("bg-night"),
         autoplay: true,
         layout: new rive.Layout({fit: "cover"}),

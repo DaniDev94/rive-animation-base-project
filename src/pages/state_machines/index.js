@@ -19,10 +19,10 @@ function riveObjects() {
     const $btnRight = document.getElementById("ball-button-right");
 
     const loading = new rive.Rive({
-        src: "/rive-animation-base-project/animations/loading.riv",
+        src: "../../assets/animations/loading.riv",
         canvas: document.getElementById("loading"),
         autoplay: true,
-        layout: new rive.Layout({ fit: "cover" }),
+        layout: new rive.Layout({fit: "cover"}),
         onLoad: () => {
             loading.resizeDrawingSurfaceToCanvas();
             loading.play();
@@ -35,11 +35,11 @@ function riveObjects() {
     });
 
     const arrowBack = new rive.Rive({
-        src: "/rive-animation-base-project/animations/arrow-back.riv",
+        src: "../../assets/animations/arrow-back.riv",
         canvas: $btnArrowBack,
         autoplay: true,
         stateMachines: ArrowMachine.MORPH,
-        layout: new rive.Layout({ fit: rive.Fit.Fill }),
+        layout: new rive.Layout({fit: rive.Fit.Fill}),
         onLoad: () => {
             arrowBack.resizeDrawingSurfaceToCanvas();
             const inputs = arrowBack.stateMachineInputs(ArrowMachine.MORPH);
@@ -56,7 +56,7 @@ function riveObjects() {
             if (event.data[0].includes(ArrowMorphStates.ASARROW)) {
                 $btnArrowBack.classList.remove("idle");
                 $btnArrowBack.classList.add("active");
-                if ($btnArrowBack.classList.value == "active") {
+                if ($btnArrowBack.classList.value === "active") {
                     $btnArrowBack.addEventListener("click", function (event) {
                         event.preventDefault();
                         window.location.assign(location.origin + "/rive-animation-base-project/");
@@ -70,11 +70,11 @@ function riveObjects() {
     });
 
     const emoji = new rive.Rive({
-        src: "/rive-animation-base-project/animations/emoji.riv",
+        src: "../../assets/animations/emoji.riv",
         canvas: document.getElementById("emoji"),
         autoplay: true,
         stateMachines: EmojiMachine.BASIC,
-        layout: new rive.Layout({ fit: rive.Fit.Fill }),
+        layout: new rive.Layout({fit: rive.Fit.Fill}),
         onLoad: () => {
             emoji.resizeDrawingSurfaceToCanvas();
             const inputs = emoji.stateMachineInputs(EmojiMachine.BASIC);
@@ -103,8 +103,8 @@ function riveObjects() {
                 colorBoolean.value = false;
                 colorBoolean.count++;
                 if (colorBoolean.count > 1) {
-                    indifferentTrigger.fire(),
-                        $btnViolet.classList.add("disabled-button-violet");
+                    indifferentTrigger.fire();
+                    $btnViolet.classList.add("disabled-button-violet");
                     colorBoolean.count = 0;
                 }
             };
@@ -112,10 +112,10 @@ function riveObjects() {
     });
 
     const ball = new rive.Rive({
-        src: "/rive-animation-base-project/animations/ball-state-machine.riv",
+        src: "../../assets/animations/ball-state-machine.riv",
         canvas: document.getElementById("ball"),
-        autoplay: true,
-        layout: new rive.Layout({ fit: rive.Fit.Fill }),
+        autoplay: false,
+        layout: new rive.Layout({fit: rive.Fit.Fill}),
         stateMachines: BallMachine.DEFAULT,
         onLoad: () => {
             ball.resizeDrawingSurfaceToCanvas();
@@ -125,10 +125,10 @@ function riveObjects() {
 
     const initializeBallButtons = () => {
         const ballButtonLeft = new rive.Rive({
-            src: "/rive-animation-base-project/animations/btn-ball.riv",
+            src: "../../assets/animations/btn-ball.riv",
             canvas: document.getElementById("btn-left"),
             autoplay: false,
-            layout: new rive.Layout({ fit: rive.Fit.Fill }),
+            layout: new rive.Layout({fit: rive.Fit.Fill}),
             animations: BallButtonStates.NORMAL,
             onLoad: () => {
                 const inputs = ball.stateMachineInputs(BallButtonMachine.DEFAULT);
@@ -183,10 +183,10 @@ function riveObjects() {
         });
 
         const ballButtonRight = new rive.Rive({
-            src: "/rive-animation-base-project/animations/btn-ball.riv",
+            src: "../../assets/animations/btn-ball.riv",
             canvas: document.getElementById("btn-right"),
             autoplay: false,
-            layout: new rive.Layout({ fit: rive.Fit.Fill }),
+            layout: new rive.Layout({fit: rive.Fit.Fill}),
             animations: BallButtonStates.NORMAL,
             onLoad: () => {
                 const inputs = ball.stateMachineInputs("StateMachine");
@@ -206,6 +206,7 @@ function riveObjects() {
                     ballButtonRight.play(BallButtonStates.NORMAL);
                 };
                 $btnRight.onclick = () => {
+                    ball.play();
                     ballButtonRight.pause(BallButtonStates.HOVER);
                     ballButtonRight.play(BallButtonStates.PRESSED);
                     // Ball animation controller ------------------>

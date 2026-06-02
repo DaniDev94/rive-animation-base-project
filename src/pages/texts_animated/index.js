@@ -23,7 +23,7 @@ function riveObjects() {
   const $faceController2 = document.getElementById("face-controller-2");
 
   const loading = new rive.Rive({
-    src: "/rive-animation-base-project/animations/loading.riv",
+    src: "../../assets/animations/loading.riv",
     canvas: document.getElementById("loading"),
     autoplay: true,
     layout: new rive.Layout({ fit: "cover" }),
@@ -34,7 +34,6 @@ function riveObjects() {
         $allContent.classList.remove("opacity-0");
         $loadingContainer.className = "disabled";
         loading.pause();
-        textAnimatedHosted;
       }, 1800);
     },
     onPause: (e) => {
@@ -47,7 +46,7 @@ function riveObjects() {
   });
 
   const arrowBack = new rive.Rive({
-    src: "/rive-animation-base-project/animations/arrow-back.riv",
+    src: "../../assets/animations/arrow-back.riv",
     canvas: $btnArrowBack,
     autoplay: true,
     stateMachines: ArrowMachine.MORPH,
@@ -68,7 +67,7 @@ function riveObjects() {
       if (event.data[0].includes(ArrowMorphStates.ASARROW)) {
         $btnArrowBack.classList.remove("idle");
         $btnArrowBack.classList.add("active");
-        if ($btnArrowBack.classList.value == "active") {
+        if ($btnArrowBack.classList.value === "active") {
           $btnArrowBack.addEventListener("click", function (event) {
             event.preventDefault();
             window.location.assign(
@@ -84,7 +83,7 @@ function riveObjects() {
   });
 
   const face0 = new rive.Rive({
-    src: "/rive-animation-base-project/animations/face-0.riv",
+    src: "../../assets/animations/face-0.riv",
     canvas: $faceController0,
     autoplay: true,
     stateMachines: FaceMachine.DEFAULT,
@@ -95,7 +94,7 @@ function riveObjects() {
   });
 
   const face1 = new rive.Rive({
-    src: "/rive-animation-base-project/animations/face-1.riv",
+    src: "../../assets/animations/face-1.riv",
     canvas: $faceController1,
     autoplay: true,
     stateMachines: FaceMachine.DEFAULT,
@@ -106,7 +105,7 @@ function riveObjects() {
   });
 
   const face2 = new rive.Rive({
-    src: "/rive-animation-base-project/animations/face-2.riv",
+    src: "../../assets/animations/face-2.riv",
     canvas: $faceController2,
     autoplay: true,
     stateMachines: SkullyMachine.DEFAULT,
@@ -119,7 +118,7 @@ function riveObjects() {
 
   /*  <---------------- "Embedded" method on Rive ----------------> */
   const textAnimatedEmbedded = new rive.Rive({
-    src: "/rive-animation-base-project/animations/text-animated-embedded.riv",
+    src: "../../assets/animations/text-animated-embedded.riv",
     artboard: "Prueba texto",
     canvas: $textAnimatedEmbedded,
     autoplay: false,
@@ -139,7 +138,7 @@ function riveObjects() {
 
   /*  <---------------- "Hosted" method on Rive ----------------> */
   const textAnimatedHosted = new rive.Rive({
-    src: "/rive-animation-base-project/animations/text-animated-hosted.riv",
+    src: "../../assets/animations/text-animated-hosted.riv",
     artboard: "Prueba texto",
     canvas: $textAnimatedHosted,
     autoplay: false,
@@ -159,7 +158,7 @@ function riveObjects() {
 
   /*  <---------------- Load fonts from "Referenced" method on Rive ----------------> */
   const textAnimatedReferenced = new rive.Rive({
-    src: "/rive-animation-base-project/animations/text-animated-referenced.riv",
+    src: "../../assets/animations/text-animated-referenced.riv",
     artboard: "Prueba texto",
     canvas: $textAnimatedReferenced,
     autoplay: false,
