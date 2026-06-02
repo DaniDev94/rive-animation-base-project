@@ -20,7 +20,7 @@ function globalRiveObjects() {
             loading.play();
             setTimeout(() => {
                 $allContent.classList.remove("opacity-0");
-                $loadingContainer.className = "disabled";
+                $loadingContainer.className = "d-none";
                 loading.pause();
             }, 1800);
         },
@@ -65,6 +65,9 @@ function globalRiveObjects() {
 
 function mainRiveObject() {
     const $streakSaver = document.getElementById("streak-saver-front-db");
+    const $buttonFloat = document.getElementsByClassName("button-animation-float")[0];
+    const $buttonReload = document.getElementsByClassName("button-page-reload")[0];
+    const flyingFloat = new Audio('/sounds/flying_float.mp3');
 
     const streakSaver = new rive.Rive({
         src: "/rive-animation-base-project/animations/gamificacion_salvarachas_front_db.riv",
@@ -75,30 +78,80 @@ function mainRiveObject() {
         stateMachines: "StateMachine",
         onLoad: () => {
             streakSaver.resizeDrawingSurfaceToCanvas();
+
+            /*
+             * Obtiene la referencia del view model por defecto
+             * const defaultViewModel = streakSaver.defaultViewModel();
+             * Accedemos a la instancia del view moder (se trabaja con viewModelInstance)
+             * console.log(defaultViewModel.defaultInstance());
+            */
+
+            // Accedemos a la instancia del view model a través de la propiedad viewModelInstance.
+            const vmInstance = streakSaver.viewModelInstance;
+            /*
+             * Accedemos a las prpiedades de la instancia, las que se usaban para los eventos y usaremos para el binding.
+             * console.log(vmInstance.properties);
+            */
+
+
+            // Triggers
+            const triggerProperty = vmInstance.trigger("triggerVuelo");
+            $buttonFloat.addEventListener("click", () => {
+                $buttonFloat.classList.add("btn-clicked");
+                triggerProperty.trigger();
+            });
+
+
+            /* Observacion de eventos con Data Binding */
+
+            // Accedemos a las propiedades que queremos observar, en este caso el número "track" y el booleano "isAnimCompletedFront".
+            const numberProperty = vmInstance.number("track");
+            const booleanProperty = vmInstance.boolean("isAnimCompletedFront");
+
+            // Creamos un evento por cada propiedad para escuchar los cambios específicos.
+            numberProperty.on(async (event) => {
+                console.log("track", event);
+                if (event === 6) {
+                    await flyingFloat.play();
+                }
+            })
+
+            booleanProperty.on((event) => {
+                console.log("isAnimCompletedFront", event);
+                if (event) {
+                    // Eliminamos los listener cuando ya no lo necesitamos, para evitar fugas de memoria. (Cuendo termina la animación).
+                    numberProperty.off();
+                    booleanProperty.off();
+                    $buttonFloat.classList.add("disabled");
+                    $buttonReload.classList.remove("opacity-0");
+                }
+            })
         },
     });
 }
 
 function startRiveCountAnimation() {
-    const $buttonAnimation = document.getElementsByClassName("button-animation-start")[0];
+    const $buttonStart = document.getElementsByClassName("button-animation-start")[0];
+    const $buttonFloat = document.getElementsByClassName("button-animation-float")[0];
     const countdownSound = new Audio('/sounds/countdown.mp3');
     const whooshSound = new Audio('/sounds/whoosh.mp3');
     let count = 5;
 
-    $buttonAnimation.classList.add("button-animation-clicked");
+    $buttonStart.classList.add("btn-clicked");
     mainRiveObject();
 
-    const countInterval = setInterval(() => {
-        $buttonAnimation.classList.add("font-4");
-        $buttonAnimation.innerHTML = `${count}`;
-        countdownSound.play();
+    const countInterval = setInterval(async () => {
+        $buttonStart.classList.add("font-4");
+        $buttonStart.innerHTML = `${count}`;
+        await countdownSound.play();
         count--;
 
         if (count < 0) {
+            $buttonFloat.classList.remove("opacity-0");
             clearInterval(countInterval);
-            $buttonAnimation.classList.add("scale-out-center");
+            $buttonStart.classList.add("scale-out-center");
             countdownSound.pause();
-            whooshSound.play();
+            await whooshSound.play();
         }
     }, 1000)
 }
@@ -108,7 +161,6 @@ function handleStreakSaverAnimation() {
     const $buttonAnimation = document.getElementsByClassName("button-animation-start")[0];
     $buttonAnimation.addEventListener("click", () => {
         if (!isButtonAnimationClicked) {
-            console.log('esto')
             startRiveCountAnimation();
         }
         isButtonAnimationClicked = true;
