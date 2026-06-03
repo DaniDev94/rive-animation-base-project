@@ -1,18 +1,34 @@
-import { defineConfig } from 'vite';
-import { resolve } from 'path';
+import {defineConfig} from 'vite';
+import {resolve} from 'path';
 import dns from 'dns';
+import copy from 'rollup-plugin-copy';
 
 dns.setDefaultResultOrder('verbatim')
 const root = resolve(__dirname, 'src');
 const outDir = resolve(__dirname, 'dist');
 
 export default defineConfig({
-    root,
+    root: root,
     base: '/rive-animation-base-project/',
     publicDir: resolve(__dirname, 'public'),
     server: {
         port: '4000',
     },
+    plugins: [
+        copy({
+            targets: [
+                {
+                    src: 'src/assets/animations/**/*',
+                    dest: 'dist/assets/animations'
+                },
+                {
+                    src: 'src/assets/sounds/**/*',
+                    dest: 'dist/assets/sounds'
+                }
+            ],
+            hook: 'writeBundle'
+        })
+    ],
     build: {
         outDir,
         emptyOutDir: true,
