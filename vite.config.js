@@ -24,7 +24,11 @@ export default defineConfig({
                 {
                     src: 'src/assets/sounds/**/*',
                     dest: 'dist/assets/sounds'
-                }
+                },
+                {
+                    src: 'src/assets/locales/**/*',
+                    dest: 'dist/assets/locales'
+                },
             ],
             hook: 'writeBundle'
         })
